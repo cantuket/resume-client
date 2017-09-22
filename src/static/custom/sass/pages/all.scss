@@ -1,0 +1,40 @@
+
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper > div {
+  position: absolute;
+  padding-top: 100px;
+  width:100%;
+}
+
+.main-nav {
+	position: fixed;
+	top:0;
+	width:100%;
+	height:inherit;
+	z-index:100;
+    background-color: rgb(121, 134, 203);
+
+    a {
+    	display: block;
+    	text-align: center;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+    }
+
+}
+
+h6{
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.material-icons.large {
+  font-size: 40px;
+}
+
+.no-pointer {
+  cursor:initial !important;
+}
