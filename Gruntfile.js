@@ -1,4 +1,7 @@
 'use strict()';
+const mozjpeg = require('imagemin-mozjpeg');
+const imageminAdvpng = require('imagemin-advpng');
+const imageminPngcrush = require('imagemin-pngcrush');
 
 module.exports = function(grunt) {
 	var jsCore= [
@@ -34,7 +37,39 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		imagemin: {
+	        dynamic: {
+	        	 options: {
+	                optimizationLevel: 3,
+	                svgoPlugins: [{removeViewBox: false}],
+	                use: [
+	                	mozjpeg({
+	                		quality:30 
+	                	}), 
+	                	// imageminPngcrush({
+	                	// 	reduce:true
+	                	// }),
+	                	// pngout({ 
+	                	// 	strategy: 0 
+	                	// }), 
+	                	imageminAdvpng({
+	                		optimizationLevel:4
+	                	}), 	 	 
+	                	] // Example plugin usage
+	            },
+	            files: [{
+	                expand: true,
+	                cwd: './public/images-dev/',
+	                src: ['**/*.{png,jpg,gif}'],
+	                dest: './public/images/'
+	            }]
+	        }
+	    },
 		watch: {
+			images: {
+				files: ['./public/images-dev/**/*.{png,jpg,gif}'],
+				tasks: ['imagemin']
+			},
 			css: {
 				files: '**/*.scss',
 				tasks: ['sass']
@@ -46,6 +81,7 @@ module.exports = function(grunt) {
 		}
 	});
 	// grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');

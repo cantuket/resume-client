@@ -160,7 +160,7 @@ class VerticalNonLinear extends React.Component {
   renderStepActions(step, next, previous) {
    const {stepIndex} = this.state;
 
-    if (stepIndex !== 'none') {
+    if (stepIndex !== null) {
     return (
       <div style={{margin: '12px',width:'100%',display:'block', position:'relative'}}>
         <div style={{position:'absolute',left:'-100px',top:'140px'}}>
@@ -219,7 +219,12 @@ class VerticalNonLinear extends React.Component {
       return _.map(experienceContent, (section, i) => {
           return (
               <Step key={i}>
-                <StepButton onClick={() => this.setState({stepIndex: i})}>
+                <StepButton 
+                onClick={() => {
+                  this.setState({stepIndex: i});
+                  this.scrollTo(Stepper); 
+                }}
+                >
                   <h5>{section.era}&nbsp;&nbsp;|</h5> <p style={{marginBottom:0, marginTop:'10px', marginLeft:'20px'}}>{section.dates}</p>
                 </StepButton>
                 <StepContent>
@@ -235,7 +240,7 @@ class VerticalNonLinear extends React.Component {
 
   renderStartBtn () {
     const {stepIndex} = this.state;
-    if (stepIndex === 'none') {
+    if (stepIndex === null) {
       return (
           <RaisedButton
           label="Learn More"
@@ -255,7 +260,11 @@ class VerticalNonLinear extends React.Component {
     const {stepIndex} = this.state;
     return (
       <div style={{maxWidth: 1000, maxHeight: 1000, margin: 'auto',minHeight:'150vh'}}>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</h4>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
+          irure dolor in reprehenderit in voluptate velit
+        </h5>
         <div style={{minHeight:'60px'}}>
         {this.renderStartBtn()}
        {this.renderStepActions()}
