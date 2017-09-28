@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import RaisedButton from 'material-ui/RaisedButton'
 import { renderTextField } from './form_helpers'
 import _ from 'lodash'
-import { EditorState, convertFromRaw } from 'draft-js';
+import { convertFromRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import $ from 'jquery'
@@ -65,8 +65,7 @@ class SignupForm extends Component {
   }
 
   render() {
-    const {handleSubmit} = this.props
-    const { contentState } = this.state;
+
     return (
       <div>
         {this.renderAlert()}

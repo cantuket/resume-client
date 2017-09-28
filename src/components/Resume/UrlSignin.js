@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { reduxForm } from 'redux-form'
 import queryString from 'query-string'
 import * as actions from '../../actions'
 import {Col, Row} from 'react-grid-system'

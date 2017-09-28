@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 import _ from 'lodash'
 import BigCalendar from 'react-big-calendar';
-import events from './events';
 import moment from 'moment'
 require('react-big-calendar/lib/css/react-big-calendar.css');
 import $ from 'jquery'
 
-import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import {Col, Row} from 'react-grid-system';
 import TimePicker from 'material-ui/TimePicker';
@@ -58,9 +56,8 @@ class MyCalendar extends Component {
 		          }
 		      }
 		    />
-		    );
-		// }
-	}
+			);
+		}
 	}
 	
   render(){
@@ -68,17 +65,14 @@ class MyCalendar extends Component {
 		<Row>
 			<Col md={6}>
 			<div>
-				{
-					this.renderCalendar()
-				}
+				{this.renderCalendar()}
 			</div>
 			</Col>
-		    <Col md={6}>
+		    <Col md={4} offset={{md:1}}>
 		    	<form style={{marginTop:'80px'}} name="scheduleForm" id="scheduleForm"
 	        	onSubmit={
 		             this.props.handleSubmit((e) => {
 		              let values = $('#scheduleForm').serializeArray();
-
 		              let newValues = {};
 		              _.map(values, value => {
 	              			return (
@@ -87,17 +81,17 @@ class MyCalendar extends Component {
 		              })
 
 		              if (!_.includes(newValues.startTime,':')) {
-		              		var str = newValues.startTime,
-							chars = str.split('');
-							chars.splice(-3, 0, ':00');
-							newValues.startTime = chars.join('');
+		              		let str = newValues.startTime,
+											chars = str.split('');
+											chars.splice(-3, 0, ':00');
+											newValues.startTime = chars.join('');
 		              } 
 
-		               if (!_.includes(newValues.emdTime,':')) {
-		              		var str = newValues.endTime,
-							chars = str.split('');
-							chars.splice(-3, 0, ':00');
-							newValues.endTime = chars.join('');
+		              if (!_.includes(newValues.emdTime,':')) {
+		              		let str = newValues.endTime,
+											chars = str.split('');
+											chars.splice(-3, 0, ':00');
+											newValues.endTime = chars.join('');
 		              } 
 
 		              newValues.start =  new Date(moment(newValues.date +" "+ newValues.startTime)).toString();
@@ -123,7 +117,6 @@ class MyCalendar extends Component {
 			      hintText="End Time"
 			      name="endTime"
 			      ref='endTime'
-			      
 			      // value={this.state.endTime} onChange={this.handleInputChange.bind(this)}
 			    />
 			    <Autocomplete
@@ -150,7 +143,6 @@ class MyCalendar extends Component {
 };
 
 function mapStateToProps({meetings}) {
-  console.log(meetings);
   return {
     meetings
   };

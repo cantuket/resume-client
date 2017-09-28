@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import SignupForm from './signup_form'
 import * as actions from '../../actions'
-import { Redirect } from 'react-router-dom'
 
 class Signup extends Component {
 

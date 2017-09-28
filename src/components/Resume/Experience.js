@@ -7,25 +7,15 @@ import {
   StepContent,
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
 
-import FontIcon from 'material-ui/FontIcon';
 import IconButton from 'material-ui/IconButton';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 
-import ActionHome from 'material-ui/svg-icons/action/home';
-
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-// import FlatButton from 'material-ui/FlatButton';
-import Toggle from 'material-ui/Toggle';
 import ExperienceSection from './ExperienceSection';
-import Portfolio from './Portfolio/index'
-import {Row, Col} from 'react-grid-system'
+import {Row} from 'react-grid-system'
 
-import { StickyContainer, Sticky } from 'react-sticky';
 import Scroll from 'react-scroll'; // Imports all Mixins
-import {scroller} from 'react-scroll'; 
+
 var scroll = Scroll.animateScroll;
 let Element  = Scroll.Element;
 
@@ -147,7 +137,7 @@ const styles = {
 class VerticalNonLinear extends React.Component {
 
   state = {
-    stepIndex: 'none',
+    stepIndex: null,
   };
 
   handleNext = () => {
@@ -179,7 +169,6 @@ class VerticalNonLinear extends React.Component {
             onClick={this.handlePrev}
             style={styles.moveIconUp}
             className={stepIndex === 0 ?"no-pointer":""}
-            // iconStyle={{color:'red', background:'red'}}
           >
              <i className={stepIndex === 0 ? "hide material-icons large" : "material-icons large"}>keyboard_arrow_up</i>
           </IconButton> 
@@ -219,7 +208,6 @@ class VerticalNonLinear extends React.Component {
 
   renderJobs(jobs){
     let width = 100/jobs.length + '%';
-    console.log(width);
     return  _.map(jobs, (job,i) =>{
       return (
         <ExperienceSection key={i} width={width} content={job} />
@@ -263,10 +251,8 @@ class VerticalNonLinear extends React.Component {
       );
     }
   }
-  // {this.renderStepActions(0, 'Next', 'Back')}
   render() {
     const {stepIndex} = this.state;
-
     return (
       <div style={{maxWidth: 1000, maxHeight: 1000, margin: 'auto',minHeight:'150vh'}}>
         <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</h4>
