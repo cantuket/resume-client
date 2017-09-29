@@ -31,7 +31,7 @@ const experienceContent = [
         date:"Dec '16 - Present",
         location:'Chicago, IL',
         highlights: ['javascript', 'html'],
-        intro:'Partner amd developer of digital constancy for Private Equity Groups',
+        intro:'Partner amd developer of digital consultancy for Private Equity Groups',
         body:'<p>Own a firm that provides digital marketing and due diligence services to private equity groups and their portfolio companies. I’m Responsible for all aspects of creative media &amp; web development, as well as the project management lead.</p>',
         
       },
