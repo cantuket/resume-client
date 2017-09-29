@@ -307,7 +307,7 @@ class VerticalNonLinear extends React.Component {
         <h5 style={{lineHeight:'1.5'}}>
           I have a pretty diverse background with experience in a wide range of industries and roles 
           including sales, consulting, strategy and management. I've been programming for the past 5 years, which 
-          has been my primary passion and income stream, working on contract work, client projects and experimental side projects. 
+          has been my primary passion and income stream, working on a combination of contract work, client projects and experimental side projects. 
         </h5>
         <div style={{minHeight:'60px', marginTop:'20px'}}>
        {this.renderStartBtn()}
