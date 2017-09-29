@@ -9,8 +9,8 @@ import {
   FETCH_LISTING,
   FETCH_MEETINGS
 } from './types'
-const ROOT_URL = 'http://35.202.81.248:3090'
-// const ROOT_URL = 'http://localhost:3090'
+// const ROOT_URL = 'http://35.202.81.248:3090'
+const ROOT_URL = 'http://localhost:3090'
 
 
 

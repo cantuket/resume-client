@@ -9,7 +9,7 @@ import moment from 'moment'
 require('react-big-calendar/lib/css/react-big-calendar.css');
 import $ from 'jquery'
 
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import {Col, Row} from 'react-grid-system';
 import TimePicker from 'material-ui/TimePicker';
 import Autocomplete from 'react-google-autocomplete';
@@ -105,7 +105,7 @@ class MyCalendar extends Component {
 		        }
 	        >
 	        <Row>
-	        	<input type="text" placeholder="date" name="date" />
+	        	<input type="text" placeholder="< Select Date" name="date" />
 	        	 <TimePicker
 			      hintText="Start Time"
 			      name="startTime"
@@ -129,10 +129,10 @@ class MyCalendar extends Component {
 				    // componentRestrictions={{country: "us"}}
 				/>
 	        </Row>  
-	          <FlatButton
+	          <RaisedButton
 	            label="Submit"
 	            type="submit"
-	            primary={true}
+	            secondary={true}
 	            keyboardFocused={true}
 	          />
 	        </form>

@@ -66,7 +66,7 @@ const muiTheme = getMuiTheme({
         "primary1Color": "#000",
         "primary2Color": "#303f9f",
         "primary3Color": "#c5cae9",
-        "accent1Color": "#8d6e63",
+        "accent1Color": "#80deea",
         "accent2Color": "#64b5f6",
         "secondaryTextColor": "#7986cb",
         "canvasColor": "#e3f2fd",

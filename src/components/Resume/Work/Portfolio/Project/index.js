@@ -30,7 +30,7 @@ class Project extends  Component {
                 <div className="col m8">
                     <div dangerouslySetInnerHTML={{__html:this.props.data.content.body}} />
                     <a href={`http://${this.props.data.content.url}`} target="_blank">
-                        <RaisedButton label="Visit Site" style={{marginBottom:'50px'}} primary={true} />
+                        <RaisedButton label="Visit Site" style={{marginBottom:'50px'}} secondary={true} />
                     </a>
                     <ImageNav links={this.props.data.links} />
                 </div>

@@ -34,25 +34,19 @@ export default class CardExampleControlled extends React.Component {
 
   render() {
     return (
-      <Card style={{width: this.props.width, float:'left', paddingLeft:'20px',backgroundColor:'transparent', boxShadow:'none'}} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+      <Card style={{width: '50%', float:'left', paddingLeft:'20px',backgroundColor:'transparent', boxShadow:'none'}} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
         <CardHeader
-          title={this.props.content.title +', '+this.props.content.company} 
-          subtitle={this.props.content.date} 
+          title={this.props.content.company} 
+          subtitle={this.props.content.title +' | '+ this.props.content.date} 
           // avatar={this.props.content.icon} 
           actAsExpander={true}
           showExpandableButton={true}
+          titleStyle={{fontSize:'1.3rem'}}
         />
-        <CardText style={{paddingTop:'0'}}>
+        <CardText style={{fontWeight:'500',fontStyle:'italic',paddingTop:'0', paddingBottom:'0'}}>
           {this.props.content.intro} 
         </CardText>
-        {/*<CardMedia
-          expandable={true}
-          overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-        >
-          <img src="images/nature-600-337.jpg" alt="" />
-        </CardMedia>
-        <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />*/}
-        <CardText dangerouslySetInnerHTML={{__html: this.props.content.body}} expandable={true}>
+        <CardText style={{fontSize:'.9rem',paddingTop:'0'}} className="card-text" dangerouslySetInnerHTML={{__html: this.props.content.body}} expandable={true}>
         
         </CardText>
       </Card>
