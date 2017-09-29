@@ -31,8 +31,19 @@ const experienceContent = [
         date:"Dec '16 - Present",
         location:'Chicago, IL',
         highlights: ['javascript', 'html'],
-        intro:'Founder and partner of digital constancy for Private Equity Groups',
-        body:'<p>I own a firm that provides digital marketing and due diligence services to private equity groups and their portfolio companies. I’m Responsible for all aspects of creative media &amp; web development, as well as the project management lead.</p>',
+        intro:'Partner amd developer of digital constancy for Private Equity Groups',
+        body:'<p>Own a firm that provides digital marketing and due diligence services to private equity groups and their portfolio companies. I’m Responsible for all aspects of creative media &amp; web development, as well as the project management lead.</p>',
+        
+      },
+      {
+        company:'Devour Agency',
+        icon:'',
+        title:'Partner',
+        date:"Dec '16 - Present",
+        location:'Chicago, IL',
+        intro:'Partner and developer of digital agency focused on restaurants',
+        body:`<p>Devour is a group of marketing and creative experts who are almost as passionate about food as we are about growth. We elevate brands and drive growth by any and all means available.</p>
+              <p>We’ve developed customized digital strategies for each segment of the restaurant industry allowing us to deliver tailored solutions that are designed to maximize your ROI in digital marketing.</p>`,
         
       },
       {
@@ -54,10 +65,10 @@ const experienceContent = [
         company:'The Computer Studio',
         icon:'',
         title:'Developer',
-        date:"Jul '13 – Dec 2016",
+        date:"Jul '13 – Present",
         location:'Chicago, IL',
-        intro:'Lead developer for a digital agency, building most Wordpress sites.',
-        body:'<p>I worked as lead developer for a small agency and have been involved in a range of different front-end, back-end and marketing projects.</p>',
+        intro:'Developer for a digital agency, building mostly Wordpress sites.',
+        body:'<p>I work for a small agency and have been involved in a range of different front-end, back-end and marketing projects.</p>',
         
         
       },
@@ -74,7 +85,7 @@ const experienceContent = [
   },
   { era: 'Banker & Manager',
    // overview: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit',
-    dates: 'July 2013 - Dec 2016',
+    dates: 'December 2011 - February 2013',
     jobs:[
       {
         title:'Consultant',
@@ -110,19 +121,19 @@ const experienceContent = [
         
       },
       {
-        title:'Analyst & Associate',
+        title:'Senior Analyst',
         icon:'',
         company:'Blackmore Partners',
-        date:"Mar '12 - Jul '12 ",
+        date:"Dec '11 - Mar '12 ",
         location:'Chicago, IL',
         intro:'',
         body:`<ul>
-              <li>Led Deal Team and managed core business functions.</li>
-              <li>Increased deal activity through improved information systems and client management.</li>
-              <li>Established policy deployment schedule and KPI dashboard.</li>
-              <li>Expanded firm from 12 to 21 employees by optimizing hiring processes and organizational structures.</li>
-              <li>Increased productivity by integrating executive search team with core business functions.</li>
-              <li>Led 4 deals from origination to LOI (Pipeline Services, Flexible Printing, Automotive/Minning and Medical Diagnostics)</li>
+                <li>Developed investment proposals</li>
+                <li>Attended management presentations</li>
+                <li>Led business development campaigns</li>
+                <li>Restructured CRM Process</li>
+                <li>Managed recruiting, hiring and training</li>
+                <li>Analyzed and contacted target clients</li>
               </ul>`,
         
       }
@@ -295,8 +306,8 @@ class VerticalNonLinear extends React.Component {
       <div style={{maxWidth: 1000, maxHeight: 1000, margin: 'auto',paddingTop:'60px',minHeight:'150vh'}}>
         <h5 style={{lineHeight:'1.5'}}>
           I have a pretty diverse background with experience in a wide range of industries and roles 
-          including sales, consulting, strategy and management. I've been programming for the past 4 years, which 
-          has been my primary income stream, from both contract work and client projects. 
+          including sales, consulting, strategy and management. I've been programming for the past 5 years, which 
+          has been my primary passion and income stream, working on contract work, client projects and experimental side projects. 
         </h5>
         <div style={{minHeight:'60px', marginTop:'20px'}}>
        {this.renderStartBtn()}
