@@ -30,6 +30,7 @@ import Infrastructure from './components/Resume/Work/Infrastructure'
 import ErinAuctions from './components/Resume/Work/Portfolio/ErinAuctions'
 import ErinAuctionsDataStructure from './components/Resume/Work/Portfolio/ErinAuctions/data-structure'
 import ErinAuctionsFeatures from './components/Resume/Work/Portfolio/ErinAuctions/features'
+// import PortfolioContainer from './components/Resume/Work/Portfolio/Project/index'
 
 import GM from './components/Resume/Work/Portfolio/GM'
 import GMDataStructure from './components/Resume/Work/Portfolio/GM/data-structure'
@@ -128,7 +129,7 @@ ReactDOM.render(
                 <Route path="/" exact={true} component={Welcome}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signout" component={Signout}/>
-                <Route path="/admin" component={Signup}/>
+                <Route path="/some-crazy-admin-route" component={Signup}/>
                 
                 {/* Url Signin */}
                 <Route path="/cool-company" component={UrlSignin}/>
@@ -144,6 +145,7 @@ ReactDOM.render(
                 <PrivateRoute path="/work/portfolio" exact={true} component={Portfolio}/>
                 <PrivateRoute path="/work/infrastructure" exact={true} component={Infrastructure}/>
                 
+                {/* <PrivateRoute path="/work/portfolio/:project?/:section?" exact={true} component={PortfolioContainer}/> */}
 
                 <PrivateRoute path="/work/portfolio/erin-auctions" exact={true} component={ErinAuctions}/>
                 <PrivateRoute path="/work/portfolio/erin-auctions/data-structure" exact={true} component={ErinAuctionsDataStructure}/>
@@ -153,6 +155,7 @@ ReactDOM.render(
                 <PrivateRoute path="/work/portfolio/goldstein-mcclintock/data-structure" exact={true} component={GMDataStructure}/>
                 <PrivateRoute path="/work/portfolio/goldstein-mcclintock/routes" exact={true} component={GMRoutes}/>
                 <PrivateRoute path="/work/portfolio/goldstein-mcclintock/features" exact={true} component={GMFeatures}/>
+                
 
                 <PrivateRoute path="/work/portfolio/the-bartend-group" exact={true} component={TBG}/>
                 <PrivateRoute path="/work/portfolio/the-bartend-group/data-structure" exact={true} component={TBGDataStructure}/>

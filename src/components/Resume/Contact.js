@@ -14,15 +14,46 @@ import {Col, Row} from 'react-grid-system';
 import TimePicker from 'material-ui/TimePicker';
 import Autocomplete from 'react-google-autocomplete';
 
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+
 // Setup the localizer by providing the moment (or globalize) Object
 // to the correct localizer.
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 
 class MyCalendar extends Component {
- 
+  state = {
+		open: false,
+		dialogContent: {}
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+	};
+	
 	componentWillMount() {
 		this.props.fetchAllMeetings();
+	}
+
+	renderDialog (meeting){
+		return (
+			<Dialog
+				title={this.state.dialogContent.title}
+				modal={false}
+				open={this.state.open}
+				onRequestClose={this.handleClose}
+			>
+			<div>
+				<h5>{this.state.dialogContent.location}</h5>
+				<h5>{moment(this.state.dialogContent.start).format('ddd MMM Do')}</h5>
+			</div>
+			</Dialog>
+		);
 	}
 
 	renderCalendar(){
@@ -31,7 +62,9 @@ class MyCalendar extends Component {
 				return ({
 					title:meeting.title,
 					start:new Date(meeting.start),
-					end:new Date(meeting.end)
+					end:new Date(meeting.end),
+					location:meeting.location
+
 				});
 			});
 
@@ -43,17 +76,18 @@ class MyCalendar extends Component {
 		      startAccessor='start'
 		      endAccessor='end'
 		      onView={event => console.log(event)}
-	          defaultDate={new Date()}
-	          // min={new Date()}
-	          // components={calendarComponents}
-	          onSelectEvent={event => alert(event)}
-	          onSelectSlot={(slotInfo) => {
-		          $('#scheduleForm').find('input[name="date"]').val(moment(slotInfo.start).format('MM/DD/YY'));
-		          // alert(
-		          //   `selected slot: \n\nstart ${moment(slotInfo.start).format('MM/DD/YY')} ` +
-		          //   `\nend: ${slotInfo.end.toLocaleString()}`
-			         //  )
-		          }
+					defaultDate={new Date()}
+					// min={new Date()}
+					// components={calendarComponents}
+					onSelectEvent={event => {
+						this.setState({dialogContent:event});
+						this.handleOpen();
+						{/* this.renderDialog(event); */}
+						}
+					}
+					onSelectSlot={(slotInfo) => {
+						$('#scheduleForm').find('input[name="date"]').val(moment(slotInfo.start).format('MM/DD/YY'));
+						}
 		      }
 		    />
 			);
@@ -62,10 +96,11 @@ class MyCalendar extends Component {
 	
   render(){
 	return (
-		<Row>
+		<Row style={{marginTop:'80px'}}>
 			<Col md={6}>
 			<div>
 				{this.renderCalendar()}
+				{this.renderDialog()}
 			</div>
 			</Col>
 		    <Col md={4} offset={{md:1}}>

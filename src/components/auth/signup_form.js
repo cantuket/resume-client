@@ -11,16 +11,15 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import $ from 'jquery'
 
 const signupFields = [
-    {name:'email',type:'text'},
-    {name:'password',type:'password'},
-    {name:'passwordConfirmation',type:'text'},
-    {name:'organization',type:'text'},
-    {name:'contactName',type:'text'},
-    {name:'jobPost',type:'text'},
-    {name:'coverLetter',type:'textarea'},
-    {name:'logo',type:'text'},
-    {name:'realEmail',type:'text'},
-    {name:'position',type:'text'},
+    {name:'email',placeholder:'username',type:'text'},
+    {name:'password',placeholder:'password',type:'password'},
+    {name:'passwordConfirmation',placeholder:'confirm passwrod',type:'text'},
+    {name:'organization',placeholder:'company',type:'text'},
+    {name:'contactName',placeholder:'contact',type:'text'},
+    {name:'logo',placeholder:'logo',type:'text'},
+    {name:'realEmail',placeholder:'email',type:'text'},
+    {name:'jobPost',placeholder:'job post',type:'text'},
+    {name:'position',placeholder:'position',type:'text'},
 ];
 
 const content = {"entityMap":{},"blocks":[{"key":"637gr","text":"Initialized from content state.","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]};
@@ -58,7 +57,7 @@ class SignupForm extends Component {
               name={field.name}
               component={renderTextField}
               type={field.type}
-              placeholder={field.name}
+              placeholder={field.placeholder}
               />
           );
       });
