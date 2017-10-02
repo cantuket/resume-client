@@ -129,7 +129,7 @@ ReactDOM.render(
                 <Route path="/" exact={true} component={Welcome}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signout" component={Signout}/>
-                <Route path="/some-crazy-admin-route" component={Signup}/>
+                <PrivateRoute path="/admin" component={Signup}/>
                 
                 {/* Url Signin */}
                 <Route path="/cool-company" component={UrlSignin}/>
