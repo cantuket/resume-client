@@ -51,7 +51,9 @@ class SignupForm extends Component {
   renderFields () {
       return _.map(signupFields, (field, i) => {
           return (
+            <div className="col m6">
              <Field
+             className="col m6"
               key={i}
               label={field.name}
               name={field.name}
@@ -59,6 +61,7 @@ class SignupForm extends Component {
               type={field.type}
               placeholder={field.placeholder}
               />
+            </div>
           );
       });
   }
@@ -66,35 +69,38 @@ class SignupForm extends Component {
   render() {
 
     return (
-      <div>
+      <div style={{marginTop:'80px'}}>
         {this.renderAlert()}
         {/* <form onSubmit={handleSubmit}> */}
         <form id="signup" onSubmit={(e)=> {
             e.preventDefault();
-
             let values = $('#signup').serializeArray();
-
             let newValues = {};
             _.map(values, value => {
                 return (
                   newValues[value.name] = value.value
                 );
             })
-            
             newValues.coverLetter = this.state.contentState;
-            console.log(this);
-            console.log(newValues);
             this.props.signupUser(newValues);
+            let loginUrl = `http://resume.endbehavior.com/cool-company?user=${newValues.email}&password=${newValues.password}`;
+            console.log(loginUrl);
+            $("#signup").html('Login Url:<br><br>'+loginUrl);
+            {/* $("#signup").closest('form').find("input[type=text], textarea").val(""); */}
           }
         }>
+        <div className="row">
           {this.renderFields()}
+          <div className="col m12">
           <Editor
             wrapperClassName="demo-wrapper"
             editorClassName="demo-editor"
             onContentStateChange={this.onContentStateChange}
           />
-
           <RaisedButton type="submit" label="Sign Up" primary={true} labelColor={'#FFFFFF'}/>
+         </div>
+          
+        </div>
         </form>
       </div>
     )
