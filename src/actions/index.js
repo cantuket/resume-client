@@ -43,8 +43,8 @@ export function signinUrl(email, password, history) {
 }
 
 export function signoutUser() {
-  localStorage.removeItem('token')
-  // localStorage.removeItem('userData');
+  localStorage.removeItem('token');
+  localStorage.removeItem('userData');
   return {type: UNAUTH_USER}
 }
 
