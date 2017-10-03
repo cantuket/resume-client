@@ -12,16 +12,16 @@ class Project extends  Component {
     }
     
     renderGallery () {
-        const newImages = _.map(this.props.data.photos, (image,i) =>{
+        const newImages =  _.map(this.props.data.photos, (image,i) => {
             let img = new Image();
-            img.onload = function(){
+            img.onload =  function (){
                 image.height = img.height;
                 image.width = img.width;
             }
             img.src = image.src;
             return image;
         });
-        return (<Gallery photos={newImages} />);
+        return(<Gallery photos={newImages} />);
     }
 	render() {
 		return (
@@ -35,7 +35,7 @@ class Project extends  Component {
                     <ImageNav links={this.props.data.links} />
                 </div>
                 <div className="col m4">
-                    <SkillsTable skills={this.props.data.skills} />
+                    <SkillsTable data={this.props.data.skills} />
                     {this.renderGallery()}
                 </div>
 

@@ -15,7 +15,7 @@ import _ from 'lodash'
 class SkillsTable extends Component {
     
     renderHeader(){
-        return _.map(this.props.skills, (col,i) => {
+        return _.map(this.props.data, (col,i) => {
             return (  
                 <th style={{textTransform:'uppercase'}} key={i}>
                     { _.keys(col)[0] }
@@ -35,9 +35,10 @@ class SkillsTable extends Component {
     }
     
     renderColumns(){
-        return _.map(this.props.skills, (col,i) => {   
+        return _.map(this.props.data, (col,i) => {   
+            let width = (100/this.props.data.length) + '%';
             return (
-                <td key={i} style={{verticalAlign: 'top'}}>
+                <td key={i} style={{verticalAlign: 'top', width:width}}>
                     <ul style={{marginTop:'0'}}>
                         {this.renderSkills(col)}
                     </ul>
@@ -48,7 +49,7 @@ class SkillsTable extends Component {
     
     render (){
         return (
-            <table>
+            <table className="table-list">
                 <thead>
                 <tr>
                     {this.renderHeader()}

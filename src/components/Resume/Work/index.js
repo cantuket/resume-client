@@ -42,18 +42,38 @@ const tilesData = [
   },
 ];
 
+const tilesData2 = [
+  {
+    img: '/images/projects/p2p/listing-item.gif',
+    title: 'Peer-to-peer Marketplace',
+    url:'p2p.endbehavior.com',
+    slug: 'p2p-app',
+  },
+  {
+    img: '/images/projects/resume/booking.gif',
+    title: 'Resume App',
+    slug:'resume-app',
+    url: 'resume.endbehavior.com',
+  }
+];
+
 
 const GridListExampleSimple = () => (
   <div style={styles.root} className="row">
      <div className="row"> 
       <div className="col m8 offset-m2">
         <h2 className="center-align">My Work</h2>
-        <h6 className="center-align">Since all of my projects have been websites, and therefore any 'write' capabilities are private, I though it would be helpful to highlight notable technical components of each project and provide an overview of my infrastructure.</h6>
+        <h6 className="center-align">
+          I've been working on a few side projects to learn React while serching for a position.
+          I have worked withe React by taking pretty much every online course out there, but have never had an opportunity
+          to work on a live project for a client or had the time to start one of my own. Now that i;m commited to finding a
+          position building in React 
+        </h6>
       </div>
     </div>
     <div className="row">
         
-      <div className="col m4 offset-m1">
+      <div className="col m4">
         <Link to="/work/portfolio">
           <h4  className="black-text center-align">Portfolio</h4>
         </Link>
@@ -65,9 +85,6 @@ const GridListExampleSimple = () => (
             <Link key={i} to={`/work/portfolio/${tile.slug}`}>
             <GridTile
               key={tile.img}
-             // title={tile.title}
-              //subtitle={<span><b>{tile.url}</b></span>}
-              //actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
             >
               <img src={tile.img} alt="" />
             </GridTile>
@@ -75,7 +92,26 @@ const GridListExampleSimple = () => (
           ))}
         </GridList>
       </div>
-      <div className="col m4 offset-m2">
+      <div className="col m4">
+        <Link to="/work/react-projects">
+          <h4  className="black-text center-align">React Projects</h4>
+        </Link>
+        <GridList
+          cellHeight={100}
+          style={styles.gridList}
+        >
+          {tilesData2.map((tile, i) => (
+            <Link key={i} to={`/work/react-projects/${tile.slug}`}>
+            <GridTile
+              key={tile.img}
+            >
+              <img src={tile.img} alt="" />
+            </GridTile>
+            </Link>
+          ))}
+        </GridList>
+      </div>
+      <div className="col m4">
         <Link to="/work/infrastructure">
           <h4  className="black-text center-align">Infrastructure</h4 >
         </Link>

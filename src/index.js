@@ -46,6 +46,10 @@ import TBGDataStructure from './components/Resume/Work/Portfolio/TBG/data-struct
 import TBGRoutes from './components/Resume/Work/Portfolio/TBG/routes'
 import TBGFeatures from './components/Resume/Work/Portfolio/TBG/features'
 
+import ReactProjects from './components/Resume/Work/ReactProjects'
+import P2P from './components/Resume/Work/ReactProjects/p2p'
+import Resume from './components/Resume/Work/ReactProjects/resume'
+
 import Experience from './components/Resume/Experience'
 import Contact from './components/Resume/Contact'
 import UrlSignin from './components/Resume/UrlSignin'
@@ -116,7 +120,7 @@ ReactDOM.render(
             <Row>
               <Col md={10} offset={{md:1}}>
               <PrivateRoute path="/work" component={Breadcrumbs}/>
-              <AnimatedSwitch
+              {/* <AnimatedSwitch
                   // atEnter={bounceTransition.atEnter}
                   // atLeave={bounceTransition.atLeave}
                   // atActive={bounceTransition.atActive}
@@ -125,7 +129,7 @@ ReactDOM.render(
                   atLeave={{ opacity: 0 }}
                   atActive={{ opacity: 1 }}
                   className="route-wrapper"
-                >
+                > */}
                 <Route path="/" exact={true} component={Welcome}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signout" component={Signout}/>
@@ -166,11 +170,14 @@ ReactDOM.render(
                 <PrivateRoute path="/work/portfolio/townhouse/data-structure" exact={true} component={TownhouseDataStructure}/>
                 <PrivateRoute path="/work/portfolio/townhouse/features" exact={true} component={TownhouseFeatures}/>
 
+                <PrivateRoute path="/work/react-projects" exact={true} component={ReactProjects}/>
+                <PrivateRoute path="/work/react-projects/p2p-app" exact={true} component={P2P}/>
+                <PrivateRoute path="/work/react-projects/resume-app" exact={true} component={Resume}/>
                 
                 <PrivateRoute path="/contact" exact={true} component={Contact}/>
 
                 
-              </AnimatedSwitch>
+              {/* </AnimatedSwitch> */}
               </Col>
             </Row>
           </div>
