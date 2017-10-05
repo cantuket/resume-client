@@ -61,12 +61,12 @@ const tilesData2 = [
 const GridListExampleSimple = () => (
   <div style={styles.root} className="row">
      <div className="row"> 
-      <div className="col m8 offset-m2">
+      <div className="col m10 offset-m1">
         <h2 className="center-align">My Work</h2>
         <h6 className="center-align">
-          The sections below provides an good overview of my programming experience to date and the direction I'm headed. I did all of front and back end coding for the projects listed, as well as design for about half of them.
+          The sections below provides an overview of my programming experience to date and the direction I'm headed. I did all of the front and back end coding for the projects listed, as well as design for about half of them.
           <br/><br/>
-          This is a living document in an unfinished state, but is being updated daily so I apologize for any bugs or discrepancies you encounter.
+          This is a living document in an unfinished state, but it is being updated daily so I apologize for any bugs or discrepancies you encounter.
         </h6>
       </div>
     </div>
