@@ -64,10 +64,9 @@ const GridListExampleSimple = () => (
       <div className="col m8 offset-m2">
         <h2 className="center-align">My Work</h2>
         <h6 className="center-align">
-          I've been working on a few side projects to learn React while serching for a position.
-          I have worked withe React by taking pretty much every online course out there, but have never had an opportunity
-          to work on a live project for a client or had the time to start one of my own. Now that i;m commited to finding a
-          position building in React 
+          The sections below provides an good overview of my programming experience to date and the direction I'm headed. I did all of front and back end coding for the projects listed, as well as design for about half of them.
+          <br/><br/>
+          This is a living document in an unfinished state, but is being updated daily so I apologize for any bugs or discrepancies you encounter.
         </h6>
       </div>
     </div>

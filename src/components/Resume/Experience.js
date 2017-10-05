@@ -31,7 +31,7 @@ const experienceContent = [
         date:"Dec '16 - Present",
         location:'Chicago, IL',
         highlights: ['javascript', 'html'],
-        intro:'Partner amd developer of digital consultancy for Private Equity Groups',
+        intro:'Partner and developer of digital consultancy for Private Equity Groups',
         body:'<p>Own a firm that provides digital marketing and due diligence services to private equity groups and their portfolio companies. I’m Responsible for all aspects of creative media &amp; web development, as well as the project management lead.</p>',
         
       },
@@ -67,7 +67,7 @@ const experienceContent = [
         title:'Developer',
         date:"Jul '13 – Present",
         location:'Chicago, IL',
-        intro:'Developer for a digital agency, building mostly Wordpress sites.',
+        intro:'Developer for a digital agency, building mostly Wordpress web sites',
         body:'<p>I work for a small agency and have been involved in a range of different front-end, back-end and marketing projects.</p>',
         
         
@@ -116,7 +116,7 @@ const experienceContent = [
               <li>Established policy deployment schedule and KPI dashboard.</li>
               <li>Expanded firm from 12 to 21 employees by optimizing hiring processes and organizational structures.</li>
               <li>Increased productivity by integrating executive search team with core business functions.</li>
-              <li>Led 4 deals from origination to LOI (Pipeline Services, Flexible Printing, Automotive/Minning and Medical Diagnostics)</li>
+              <li>Led 4 deals from origination to LOI (Pipeline Services, Flexible Printing, Automotive/Mining and Medical Diagnostics)</li>
               </ul>`,
         
       },

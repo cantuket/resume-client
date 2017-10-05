@@ -41,7 +41,7 @@ class Feature extends  Component {
             return (
                 <Tab key={i} label={feature.title}>
                     <div key={i}  style={{marginTop:'40px'}} className="row">
-                        <div className="col m6 z-depth-3">
+                        <div className="col m6 z-depth-3 no-padding">
                             <img src={feature.image} alt="" width="100%" />
                         </div>
                         <div className="col m6">

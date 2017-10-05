@@ -38,9 +38,13 @@ const tilesData2 = [
 const GridListExampleSimple = () => (
   <div style={styles.root} className="row">
      <div className="row"> 
-      <div className="col m8 offset-m2">
+      <div className="col m10 offset-m1">
         <h2 className="center-align">React Projects</h2>
-        <h6 className="center-align">Since all of my projects have been websites, and therefore any 'write' capabilities are private, I though it would be helpful to highlight notable technical components of each project and provide an overview of my infrastructure.</h6>
+        <h6 className="center-align">
+          It may seem foolish seeking a position working on a technology that I have limited experience with, but during programming career I've made many short cited decisions. I'm now dedicated to gaining some level of mastery with one language as opposed to my current mediocrity with 20 of them.
+          <br/><br/>
+          I chose React because I'm ecstatic with direction of javascript and it has been a pure joy working with this language so far. The projects below are great excuses to demonstrate my abilities and further my learning, but really I just love building stuff. They're far from complete or perfect, but are improving everyday and hopefully provide a glimpse into my skill set, creativity and ability to learn. 
+        </h6>
       </div>
     </div>
     <div className="row">
