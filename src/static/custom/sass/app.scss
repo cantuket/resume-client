@@ -4,9 +4,11 @@
 @import '../../materialize-src/sass/materialize';
 
 @import 'pages/all';
+@import 'components/nav.scss';
 @import 'components/route-transition.scss';
 @import 'components/calendar.scss';
 @import 'components/buttons.scss';
 @import 'components/popover.scss';
 @import 'components/card.scss';
 @import 'components/table-list.scss';
+@import 'components/accordion.scss';

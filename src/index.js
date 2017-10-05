@@ -117,8 +117,8 @@ ReactDOM.render(
           <Header currentLocation={location}/>
           
           <div className="body">
-            <Row>
-              <Col md={10} offset={{md:1}}>
+            <div className="row">
+              <div className="col  m10 offset-m1">
               <PrivateRoute path="/work" component={Breadcrumbs}/>
               {/* <AnimatedSwitch
                   // atEnter={bounceTransition.atEnter}
@@ -178,8 +178,8 @@ ReactDOM.render(
 
                 
               {/* </AnimatedSwitch> */}
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
         </div>
       </MuiThemeProvider>

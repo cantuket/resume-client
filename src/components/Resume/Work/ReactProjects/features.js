@@ -85,7 +85,7 @@ class Feature extends  Component {
                     </span>
                 </h4>
                 <Tabs>
-                {this.renderFeatures()}
+                    {this.renderFeatures()}
                 </Tabs>
             </div>
 		);

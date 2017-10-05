@@ -47,9 +47,7 @@ class PopoverExampleAnimation extends React.Component {
           animation={PopoverAnimationVertical}
           canAutoPosition={false}
         >
-        <div className="popover-content">
-            {this.props.content}
-        </div>
+          <div dangerouslySetInnerHTML={{__html: this.props.content}} className="popover-content" />
         </Popover>
       </div>
     );

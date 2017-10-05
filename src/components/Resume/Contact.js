@@ -10,7 +10,6 @@ require('react-big-calendar/lib/css/react-big-calendar.css');
 import $ from 'jquery'
 
 import RaisedButton from 'material-ui/RaisedButton';
-import {Col, Row} from 'react-grid-system';
 import TimePicker from 'material-ui/TimePicker';
 import Autocomplete from 'react-google-autocomplete';
 
@@ -96,14 +95,14 @@ class MyCalendar extends Component {
 	
   render(){
 	return (
-		<Row style={{marginTop:'80px'}}>
-			<Col md={6}>
-			<div>
-				{this.renderCalendar()}
-				{this.renderDialog()}
+		<div className="row" style={{marginTop:'80px'}}>
+			<div className="col m6">
+				<div>
+					{this.renderCalendar()}
+					{this.renderDialog()}
+				</div>
 			</div>
-			</Col>
-		    <Col md={4} offset={{md:1}}>
+		    <div className="col m4 offset-m1">
 		    	<form style={{marginTop:'80px'}} name="scheduleForm" id="scheduleForm"
 	        	onSubmit={
 		             this.props.handleSubmit((e) => {
@@ -139,7 +138,7 @@ class MyCalendar extends Component {
 		            })
 		        }
 	        >
-	        <Row>
+	        <div className="row">
 	        	<input type="text" placeholder="< Select Date" name="date" />
 	        	 <TimePicker
 			      hintText="Start Time"
@@ -163,7 +162,7 @@ class MyCalendar extends Component {
 				    name="location"
 				    // componentRestrictions={{country: "us"}}
 				/>
-	        </Row>  
+	        </div>  
 	          <RaisedButton
 	            label="Submit"
 	            type="submit"
@@ -171,8 +170,8 @@ class MyCalendar extends Component {
 	            keyboardFocused={true}
 	          />
 	        </form>
-	    </Col>
-	  </Row>
+	    </div>
+	  </div>
 	  );
 	}
 };

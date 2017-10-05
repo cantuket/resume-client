@@ -11,17 +11,17 @@ class Welcome extends React.Component {
   			let userData = JSON.parse(localStorage.getItem('userData'));
   			return (
 				<div>
-					<Row>
-						<Col md={6}>
+					<div className="row">
+						<div className="col m6">
 							{/* <h1>Welcome</h1> */}
-						</Col>
-						<Col className="job-info" md={6}>
+						</div>
+						<div className="job-info m6">
 							{/* <h5>For: {userData.organization}</h5> */}
 							<img style={{marginTop:'30px'}} src={userData.logo} alt="" width="200px"/>		
 							<a href={userData.jobPost}>{userData.position}</a>
-						</Col>
-					</Row>
-					<Row>
+						</div>
+					</div>
+					<div className="row">
 						<h5>Hi {userData.contactName},</h5>
 						<div dangerouslySetInnerHTML={{ __html: draftToHtml(userData.coverLetter) }} />
 						<p>
@@ -34,7 +34,7 @@ class Welcome extends React.Component {
 							kyle@endbehavior.com |&nbsp;
 							<a href="https://www.linkedin.com/in/kylegermaine/" target="_blank">LinkedIn</a>
 						</p>
-					</Row>
+					</div>
 				</div>
 			);
   		} else {
@@ -48,9 +48,9 @@ class Welcome extends React.Component {
 
 	render () {
 	  return (
-	    <Row>
+	    <div className="row">
 	    	{this.renderBody()}
-	    </Row>
+	    </div>
 	  );
 	}
 }

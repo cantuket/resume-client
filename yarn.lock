@@ -5679,6 +5679,13 @@ rc@^1.1.2, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-accessible-accordion@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-accessible-accordion/-/react-accessible-accordion-1.0.0.tgz#84fe0ae3cd5c43500474b853e434d298f3030ed1"
+  dependencies:
+    classnames "^2.2.5"
+    uuid "^3.0.1"
+
 react-addons-create-fragment@^15.4.0:
   version "15.5.3"
   resolved "https://registry.yarnpkg.com/react-addons-create-fragment/-/react-addons-create-fragment-15.5.3.tgz#d0025675a9e98b2591240382c73b491251066109"

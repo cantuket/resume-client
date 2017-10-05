@@ -34,7 +34,7 @@ export default class CardExampleControlled extends React.Component {
 
   render() {
     return (
-      <Card style={{width: '50%', float:'left', paddingLeft:'20px',backgroundColor:'transparent', boxShadow:'none'}} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+      <Card  className="col l6" style={{paddingLeft:'20px',backgroundColor:'transparent', boxShadow:'none'}} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
         <CardHeader
           title={this.props.content.company} 
           subtitle={this.props.content.title +' | '+ this.props.content.date} 

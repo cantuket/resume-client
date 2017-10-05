@@ -232,7 +232,9 @@ class VerticalNonLinear extends React.Component {
   renderExperieneceSections () {
       return _.map(experienceContent, (section,i) => {
         return(
-          <ExperienceSection content={section} />
+          <div className="row">
+            <ExperienceSection content={section} />
+          </div>
         );
       });
   }
