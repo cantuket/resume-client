@@ -33,11 +33,12 @@ export function signinUrl(email, password, history) {
     request.then(response => {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('userData', JSON.stringify(response.data.userData))
+      history.replace('/welcome');
       dispatch({type: AUTH_USER})
     }).catch(() => {
       dispatch(authError('bad login info'))      
     })
-    history.replace('/');
+    history.replace('/welcome');
     
   }
 }

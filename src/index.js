@@ -119,7 +119,7 @@ ReactDOM.render(
           <div className="body">
             <div className="row">
               <div className="col  m10 offset-m1">
-              <PrivateRoute path="/work" component={Breadcrumbs}/>
+              <Route path="/work" component={Breadcrumbs}/>
               {/* <AnimatedSwitch
                   // atEnter={bounceTransition.atEnter}
                   // atLeave={bounceTransition.atLeave}
@@ -130,10 +130,10 @@ ReactDOM.render(
                   atActive={{ opacity: 1 }}
                   className="route-wrapper"
                 > */}
-                <Route path="/" exact={true} component={Welcome}/>
+                <PrivateRoute path="/" exact={true} component={Welcome}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signout" component={Signout}/>
-                <PrivateRoute path="/admin" component={Signup}/>
+                <PrivateRoute path="/some-crazy-admin-route" component={Signup}/>
                 
                 {/* Url Signin */}
                 <Route path="/cool-company" component={UrlSignin}/>
@@ -142,39 +142,39 @@ ReactDOM.render(
                 <Route path="/welcome" component={Welcome}/>                
 
                 {/* Private */}
-                <PrivateRoute path="/experience" exact={true} component={Experience}/>
+                <Route path="/experience" exact={true} component={Experience}/>
                 
-                <PrivateRoute path="/work" exact={true} component={Work}/>
+                <Route path="/work" exact={true} component={Work}/>
                 
-                <PrivateRoute path="/work/portfolio" exact={true} component={Portfolio}/>
-                <PrivateRoute path="/work/infrastructure" exact={true} component={Infrastructure}/>
+                <Route path="/work/portfolio" exact={true} component={Portfolio}/>
+                <Route path="/work/infrastructure" exact={true} component={Infrastructure}/>
                 
-                {/* <PrivateRoute path="/work/portfolio/:project?/:section?" exact={true} component={PortfolioContainer}/> */}
+                {/* <Route path="/work/portfolio/:project?/:section?" exact={true} component={PortfolioContainer}/> */}
 
-                <PrivateRoute path="/work/portfolio/erin-auctions" exact={true} component={ErinAuctions}/>
-                <PrivateRoute path="/work/portfolio/erin-auctions/data-structure" exact={true} component={ErinAuctionsDataStructure}/>
-                <PrivateRoute path="/work/portfolio/erin-auctions/features" exact={true} component={ErinAuctionsFeatures}/>
+                <Route path="/work/portfolio/erin-auctions" exact={true} component={ErinAuctions}/>
+                <Route path="/work/portfolio/erin-auctions/data-structure" exact={true} component={ErinAuctionsDataStructure}/>
+                <Route path="/work/portfolio/erin-auctions/features" exact={true} component={ErinAuctionsFeatures}/>
 
-                <PrivateRoute path="/work/portfolio/goldstein-mcclintock" exact={true} component={GM}/>
-                <PrivateRoute path="/work/portfolio/goldstein-mcclintock/data-structure" exact={true} component={GMDataStructure}/>
-                <PrivateRoute path="/work/portfolio/goldstein-mcclintock/routes" exact={true} component={GMRoutes}/>
-                <PrivateRoute path="/work/portfolio/goldstein-mcclintock/features" exact={true} component={GMFeatures}/>
+                <Route path="/work/portfolio/goldstein-mcclintock" exact={true} component={GM}/>
+                <Route path="/work/portfolio/goldstein-mcclintock/data-structure" exact={true} component={GMDataStructure}/>
+                <Route path="/work/portfolio/goldstein-mcclintock/routes" exact={true} component={GMRoutes}/>
+                <Route path="/work/portfolio/goldstein-mcclintock/features" exact={true} component={GMFeatures}/>
                 
 
-                <PrivateRoute path="/work/portfolio/the-bartend-group" exact={true} component={TBG}/>
-                <PrivateRoute path="/work/portfolio/the-bartend-group/data-structure" exact={true} component={TBGDataStructure}/>
-                <PrivateRoute path="/work/portfolio/the-bartend-group/routes" exact={true} component={TBGRoutes}/>
-                <PrivateRoute path="/work/portfolio/the-bartend-group/features" exact={true} component={TBGFeatures}/>
+                <Route path="/work/portfolio/the-bartend-group" exact={true} component={TBG}/>
+                <Route path="/work/portfolio/the-bartend-group/data-structure" exact={true} component={TBGDataStructure}/>
+                <Route path="/work/portfolio/the-bartend-group/routes" exact={true} component={TBGRoutes}/>
+                <Route path="/work/portfolio/the-bartend-group/features" exact={true} component={TBGFeatures}/>
 
-                <PrivateRoute path="/work/portfolio/townhouse" exact={true} component={Townhouse}/>
-                <PrivateRoute path="/work/portfolio/townhouse/data-structure" exact={true} component={TownhouseDataStructure}/>
-                <PrivateRoute path="/work/portfolio/townhouse/features" exact={true} component={TownhouseFeatures}/>
+                <Route path="/work/portfolio/townhouse" exact={true} component={Townhouse}/>
+                <Route path="/work/portfolio/townhouse/data-structure" exact={true} component={TownhouseDataStructure}/>
+                <Route path="/work/portfolio/townhouse/features" exact={true} component={TownhouseFeatures}/>
 
-                <PrivateRoute path="/work/react-projects" exact={true} component={ReactProjects}/>
-                <PrivateRoute path="/work/react-projects/p2p-app" exact={true} component={P2P}/>
-                <PrivateRoute path="/work/react-projects/resume-app" exact={true} component={Resume}/>
+                <Route path="/work/react-projects" exact={true} component={ReactProjects}/>
+                <Route path="/work/react-projects/p2p-app" exact={true} component={P2P}/>
+                <Route path="/work/react-projects/resume-app" exact={true} component={Resume}/>
                 
-                <PrivateRoute path="/contact" exact={true} component={Contact}/>
+                <Route path="/contact" exact={true} component={Contact}/>
 
                 
               {/* </AnimatedSwitch> */}

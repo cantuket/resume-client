@@ -39,7 +39,8 @@ class Header extends Component {
     );
     } else {
       return([
-        {title:'Welcome',route:'welcome'},
+        {title:'Experience',route:'/experience'},
+        {title:'Work',route:'/work'}
       ]);
     }
   }
@@ -56,7 +57,7 @@ class Header extends Component {
               style={styles.linkBtn} 
               label={link.title} 
               primary={true}
-              disabled={this.props.currentLocation.pathname.indexOf(link.route) !== -1 ? true : false}
+              disabled={this.props.currentLocation.pathname.includes(link.route) ? true : false}
             />
           </Link>
         </div>
@@ -83,7 +84,7 @@ class Header extends Component {
       <nav>
           <div className="row mobile-nav hide-on-large-only">
             <AppBar
-              title="Kyle Germaine"
+              title="Kyle's Resume"
               iconClassNameRight="muidocs-icon-navigation-expand-more"
               onLeftIconButtonTouchTap={this.handleToggle}
             />

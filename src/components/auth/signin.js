@@ -33,15 +33,16 @@ class Signin extends Component {
   render() {
     return (this.props.authenticated) ?
       <Redirect to={{
-        pathname: this.getRedirectPath(), state: {
+        pathname: '/welcome', state: {
           from: this.props.location
         }
       }}/>
       :
-      <div>
-        {this.displayRedirectMessages()}
-        <SigninForm onSubmit={this.handleSubmit.bind(this)} errorMessage={this.props.errorMessage}/>
-      </div>
+      <Redirect to={{
+        pathname: '/experience', state: {
+          from: this.props.location
+        }
+      }}/>
   }
 }
 
