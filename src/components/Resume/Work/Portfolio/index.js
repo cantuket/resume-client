@@ -73,31 +73,31 @@ const tilesDataSmall = [
     title: 'Richard K Morley & Associates',
     url: 'rkmorleylaw.com',
   },
-  {
-    img: '/images/work/screen-shots/blackacre-law.png',
-    title: 'Blackacre Law (WIP)',
-    url: 'blackacre-law.com',
-  },
-  {
-    img: '/images/work/screen-shots/blackacre-brokers.png',
-    title: 'Blackacre Brokers (WIP)',
-    url: 'blackacre.efficacy.io',
-  },
-  {
-    img: '/images/work/screen-shots/winyl-large.png',
-    title: 'The Winyl Exchange',
-    url: '',
-  },
-  {
-    img: '/images/work/screen-shots/tmt.png',
-    title: 'TMT Capital Partners',
-    url: 'tmtcapital.com',
-  },
-  {
-    img: '/images/work/screen-shots/medical-new-pic.png',
-    title: '(Medical Devivce Manufacturer)',
-    url: '(business dissolution)',
-  },
+  // {
+  //   img: '/images/work/screen-shots/blackacre-law.png',
+  //   title: 'Blackacre Law (WIP)',
+  //   url: 'blackacre-law.com',
+  // },
+  // {
+  //   img: '/images/work/screen-shots/blackacre-brokers.png',
+  //   title: 'Blackacre Brokers (WIP)',
+  //   url: 'blackacre.efficacy.io',
+  // },
+  // {
+  //   img: '/images/work/screen-shots/winyl-large.png',
+  //   title: 'The Winyl Exchange',
+  //   url: '',
+  // },
+  // {
+  //   img: '/images/work/screen-shots/tmt.png',
+  //   title: 'TMT Capital Partners',
+  //   url: 'tmtcapital.com',
+  // },
+  // {
+  //   img: '/images/work/screen-shots/medical-new-pic.png',
+  //   title: '(Medical Devivce Manufacturer)',
+  //   url: '(business dissolution)',
+  // },
 ];
 
 // TAP
