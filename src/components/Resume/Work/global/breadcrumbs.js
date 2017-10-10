@@ -9,9 +9,9 @@ class Breadcrumbs extends Component {
     replaceAll(str, find, replace) {
         return str.replace(new RegExp(find, 'g'), replace);
     }
-    toTitleCase(str) {
-        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    }
+    // toTitleCase(str) {
+    //     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    // }
     renderBreadcrumb() {
         const allRoutes = this.props.location.pathname.split('/');
         if (allRoutes.length > 2) {
@@ -23,8 +23,7 @@ class Breadcrumbs extends Component {
                         thePath = thePath +'/'+ allRoutes[loop]; 
                         loop++;
                     }
-                    let cleanPath = this.replaceAll(route,'-',' ');
-                    cleanPath = this.toTitleCase(cleanPath);
+                    let cleanPath = this.replaceAll(route,'-',' ').toUpperCase();
                     if (i === allRoutes.length - 1) {
                         return (
                             <span key={i} className='grey-text' style={{display:'inline-block',float:'left', marginRight:'20px'}}> 
