@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardHeader, CardText} from 'material-ui/Card';
+import moment from 'moment'
 
 export default class CardExampleControlled extends React.Component {
 
@@ -30,23 +31,38 @@ export default class CardExampleControlled extends React.Component {
       escapeEl.innerHTML = html;
       return escapeEl.textContent;
   }
+  renderEndDate(){
+    let theEndDate = '';
+    if (this.props.content.endDatePresent === true) { 
+      theEndDate = 'Present';
+    } else {
+      theEndDate =  moment(this.props.content.endDate ).format('MMM YY');
+    }
 
+    return ( 
+      this.props.content.position +
+      ' | '+ 
+      moment(this.props.content.startDate ).format('MMM YY')+
+      ' - '+
+      theEndDate
+    );
+  }
 
   render() {
     return (
       <Card  className="col l6" style={{paddingLeft:'20px',backgroundColor:'transparent', boxShadow:'none'}} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
         <CardHeader
           title={this.props.content.company} 
-          subtitle={this.props.content.title +' | '+ this.props.content.date} 
+          subtitle={this.renderEndDate()} 
           // avatar={this.props.content.icon} 
           actAsExpander={true}
           showExpandableButton={true}
           titleStyle={{fontSize:'1.3rem'}}
         />
         <CardText style={{fontWeight:'500',fontStyle:'italic',paddingTop:'0', paddingBottom:'0'}}>
-          {this.props.content.intro} 
+          {this.props.content.summary} 
         </CardText>
-        <CardText style={{fontSize:'.9rem',paddingTop:'0'}} className="card-text" dangerouslySetInnerHTML={{__html: this.props.content.body}} expandable={true}>
+        <CardText style={{fontSize:'.9rem',paddingTop:'0'}} className="card-text" dangerouslySetInnerHTML={{__html: this.props.content.overview}} expandable={true}>
         
         </CardText>
       </Card>

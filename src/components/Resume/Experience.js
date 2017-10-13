@@ -1,5 +1,8 @@
 import React from 'react';
 import _ from 'lodash'
+import {connect} from 'react-redux'
+import* as actions from '../../actions'
+import moment from 'moment'
 import {
   Step,
   Stepper,
@@ -19,128 +22,6 @@ import Scroll from 'react-scroll'; // Imports all Mixins
 
 var scroll = Scroll.animateScroll;
 let Element  = Scroll.Element;
-
-const experienceContent = [
-  { era: 'Developer & Consultant',
-    //overview: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit',
-    dates:'July 2013 - Present',
-    jobs:[{
-        company:'End Behavior',
-        icon:'http://endbehavior.com/_layout/images/logos/end-behavior-full-black.png',
-        title:'Partner',
-        date:"Dec '16 - Present",
-        location:'Chicago, IL',
-        highlights: ['javascript', 'html'],
-        intro:'Partner and developer of digital consultancy for Private Equity Groups',
-        body:'<p>Own a firm that provides digital marketing and due diligence services to private equity groups and their portfolio companies. I’m Responsible for all aspects of creative media &amp; web development, as well as the project management lead.</p>',
-        
-      },
-      {
-        company:'Devour Agency',
-        icon:'',
-        title:'Partner',
-        date:"Dec '16 - Present",
-        location:'Chicago, IL',
-        intro:'Partner and developer of digital agency focused on restaurants',
-        body:`<p>Devour is a group of marketing and creative experts who are almost as passionate about food as we are about growth. We elevate brands and drive growth by any and all means available.</p>
-              <p>We’ve developed customized digital strategies for each segment of the restaurant industry allowing us to deliver tailored solutions that are designed to maximize your ROI in digital marketing.</p>`,
-        
-      },
-      {
-        company:'Efficacy I/O',
-        icon:'',
-        title:'President',
-        date:"Jul '13 – Dec '16",
-        location:'Chicago, IL',
-        intro:'Founder/Owner/Developer of creative web studio',
-        body:'<p>We built websites for a wide range of clients involving E-commerce, dynamically generated multi-sites, highly customized content management systems and advanced front-end JS animations. I managed all aspects of front-end development, back-end development, client management, reporting & monitoring and infrastructure management. Worked with distributed team of graphic designers, SEO specialists and photographers.</p>',
-        
-      }
-    ]
-  },
-  { era: 'Learning & Hacking',
-    // overview: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit',
-    dates: 'July 2013 - Dec 2016',
-    jobs:[{
-        company:'The Computer Studio',
-        icon:'',
-        title:'Developer',
-        date:"Jul '13 – Present",
-        location:'Chicago, IL',
-        intro:'Developer for a digital agency, building mostly Wordpress web sites',
-        body:'<p>I work for a small agency and have been involved in a range of different front-end, back-end and marketing projects.</p>',
-        
-        
-      },
-      {
-        company:'Nudge',
-        icon:'',
-        title:'Founder',
-        date:"Feb '13 – Jul '13",
-        location:'Chicago, IL',
-        intro:'Hacked together prototype of an app that curates local events based off your interests',
-        body:'<p>Nudge Chicago is a platform designed to help users find local events based on their interests and consumption patterns. Our software identifies the specific motivations of event attendees through a series of targeted questions, which populates the best matching events based on our detailed event tagging system.</p>',
-      }
-    ]
-  },
-  { era: 'Banker & Manager',
-   // overview: 'orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit',
-    dates: 'December 2011 - February 2013',
-    jobs:[
-      {
-        title:'Consultant',
-        icon:'',
-        company:'Blaige & Company',
-        date:"Jul '12 - Feb '13",
-        location:'Chicago, IL',
-        intro:'',
-        body:`<ul>
-                <li>Wrote confidential memorandums, management presentations and pitch deliverables.</li>
-                <li>Led business development campaigns and deal marketing processes.</li>
-                <li>Performed financial, customer and market analyses.</li>
-                <li>Constructed ‘Plastics Industry Consolidation Study’</li>
-                <li>Participated in client ‘pitches’ and due diligence.</li>
-              </ul>`,
-        
-      },
-      {
-        title:'Managing Associate',
-        icon:'',
-        company:'Blackmore Partners',
-        date:"Mar '12 - Jul '12 ",
-        location:'Chicago, IL',
-        intro:'',
-        body:`<ul>
-              <li>Led Deal Team and managed core business functions.</li>
-              <li>Increased deal activity through improved information systems and client management.</li>
-              <li>Established policy deployment schedule and KPI dashboard.</li>
-              <li>Expanded firm from 12 to 21 employees by optimizing hiring processes and organizational structures.</li>
-              <li>Increased productivity by integrating executive search team with core business functions.</li>
-              <li>Led 4 deals from origination to LOI (Pipeline Services, Flexible Printing, Automotive/Mining and Medical Diagnostics)</li>
-              </ul>`,
-        
-      },
-      {
-        title:'Senior Analyst',
-        icon:'',
-        company:'Blackmore Partners',
-        date:"Dec '11 - Mar '12 ",
-        location:'Chicago, IL',
-        intro:'',
-        body:`<ul>
-                <li>Developed investment proposals</li>
-                <li>Attended management presentations</li>
-                <li>Led business development campaigns</li>
-                <li>Restructured CRM Process</li>
-                <li>Managed recruiting, hiring and training</li>
-                <li>Analyzed and contacted target clients</li>
-              </ul>`,
-        
-      }
-      
-    ]
-  }
-];
 
 const styles = {
   chip: {
@@ -173,6 +54,9 @@ const styles = {
  */
 class VerticalNonLinear extends React.Component {
 
+  componentDidMount (){
+    this.props.fetchExperiences();
+  }
   state = {
     stepIndex: -1,
   };
@@ -229,17 +113,6 @@ class VerticalNonLinear extends React.Component {
   }
   }
 
-  renderExperieneceSections () {
-      return _.map(experienceContent, (section,i) => {
-        return(
-          <div className="row">
-            <ExperienceSection content={section} />
-          </div>
-        );
-      });
-  }
-
-
   renderChips (chips) {
     return _.map(chips, (chip,i) => {
       return (
@@ -258,9 +131,19 @@ class VerticalNonLinear extends React.Component {
       );
     });
   }
+  renderEndDate(endDate){
+    let theEndDate = '';
+    if (endDate === true) { 
+      theEndDate = 'Present';
+    } else {
+      theEndDate =  moment(endDate).format('MMMM YYYY')
+    }
+    return (theEndDate);
+  }
+
 
   renderSteps () {
-      return _.map(experienceContent, (section, i) => {
+      return _.map(_.sortBy(this.props.experiences,'startDate').reverse(), (section, i) => {
           return (
               <Step key={i}>
                 <StepButton 
@@ -269,10 +152,15 @@ class VerticalNonLinear extends React.Component {
                   this.scrollTo('stepper'); 
                 }}
                 >
-                  <h5 style={{fontWeight:'600'}}>{section.era}&nbsp;&nbsp;</h5> <p style={{marginBottom:0, marginTop:'10px', marginLeft:'20px'}}>{section.dates}</p>
+                  <h5 style={{fontWeight:'600'}}>
+                   {section.title}&nbsp;&nbsp;
+                  </h5> 
+                  <p style={{marginBottom:0, marginTop:'10px', marginLeft:'20px'}}>
+                  {moment(section.startDate).format('MMMM YYYY')} - {this.renderEndDate(section.endDatePresent)}
+                  </p>
                 </StepButton>
                 <StepContent>
-                  <h6>{section.overview}</h6>
+                  <h6 dangerouslySetInnerHTML={{__html:section.overview}} />
                   <Row>
                    {this.renderJobs(section.jobs)}
                   </Row>
@@ -328,4 +216,10 @@ class VerticalNonLinear extends React.Component {
   }
 }
 
-export default VerticalNonLinear;
+function mapStateToProps (state) {
+      return {
+        experiences:state.experiences
+      };
+}
+
+export default connect(mapStateToProps,actions)(VerticalNonLinear);
