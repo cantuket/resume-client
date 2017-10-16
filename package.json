@@ -5,6 +5,7 @@
   "dependencies": {
     "aphrodite": "^1.2.4",
     "axios": "^0.16.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "draft-js": "^0.10.2",
     "draftjs-to-html": "^0.7.5",
     "jquery": "^3.2.1",
@@ -40,6 +41,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-plugin-transform-react-pug": "^3.2.0",
     "grunt": "^1.0.1",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-uglify": "^3.1.0",
